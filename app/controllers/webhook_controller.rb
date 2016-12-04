@@ -9,7 +9,7 @@ class WebhookController < ApplicationController
 
     signature = request.env['HTTP_X_LINE_SIGNATURE']
     unless client.validate_signature(body, signature)
-      render json: {}, status: 400
+      render json: {}, status: 400 and return
     end
 
     events = client.parse_events_from(body)
