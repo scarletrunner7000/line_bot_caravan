@@ -1,0 +1,5 @@
+# git に text として認識させたいファイルを設定
+*.md                    text
+
+# windows でも LF のままにするファイルを設定
+*.sh text               eol=lf
