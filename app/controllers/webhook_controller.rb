@@ -13,6 +13,7 @@ class WebhookController < ApplicationController
     end
 
     events = client.parse_events_from(body)
+    logger.debug events.pretty_inspect
 
     events.each { |event|
       case event
@@ -23,8 +24,9 @@ class WebhookController < ApplicationController
             type: 'text',
             text: event.message['text']
           }
-          response = client.reply_message(event['replyToken'], message)
-          logger.debug response
+          resp = client.reply_message(event['replyToken'], message)
+          logger.debug resp
+          logger.debug resp.to_hash
         end
       end
     }
