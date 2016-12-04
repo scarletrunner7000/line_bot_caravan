@@ -23,7 +23,8 @@ class WebhookController < ApplicationController
             type: 'text',
             text: event.message['text']
           }
-          client.reply_message(event['replyToken'], message)
+          response = client.reply_message(event['replyToken'], message)
+          logger.debug response
         end
       end
     }
