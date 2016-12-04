@@ -51,7 +51,7 @@ production:
   <<: *default
   adapter: mysql2
   encoding: utf8
-  database: heroku_082bd1705c4c405
-  username: b179b47ca6f3ae
+  database: heroku_48dd2002520dbc7
+  username: bdccb40fd2ef50
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
