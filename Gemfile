@@ -45,3 +45,15 @@ group :development do
   gem 'spring'
 end
 
+# heroku
+gem 'heroku'
+gem 'dotenv-rails'
+group :production do
+  gem 'rails_12factor'
+end
+
+# pry
+gem 'pry-rails'
+gem 'pry-doc'
+gem 'pry-byebug'
+gem 'pry-stack_explorer'
