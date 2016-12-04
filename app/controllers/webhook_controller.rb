@@ -25,10 +25,17 @@ class WebhookController < ApplicationController
             text: event.message['text']
           }
           resp = client.reply_message(event['replyToken'], message)
-          logger.debug request.to_hash
           logger.debug resp
           logger.debug resp.to_hash
         end
+      when Line::Bot::Event::Beacon
+        message = {
+          type: 'text',
+          text: event.['source']['userId']
+        }
+        resp = client.reply_message(event['replyToken'], message)
+        logger.debug resp
+        logger.debug resp.to_hash
       end
     }
 
