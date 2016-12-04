@@ -49,6 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: line_bot_caravan_production
-  username: line_bot_caravan
-  password: <%= ENV['LINE_BOT_CARAVAN_DATABASE_PASSWORD'] %>
+  adapter: mysql2
+  encoding: utf8
+  database: heroku_082bd1705c4c405
+  username: b179b47ca6f3ae
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
